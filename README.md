@@ -1,9 +1,9 @@
 jslogo - Logo in JavaScript
 ===========================
 
-This is hosted at https://inexorabletash.github.io/jslogo/ for playing with live.
+This is hosted at https://mnalis.com/skola/jslogo-fms/ for playing with live.
 
-[Language Reference](https://htmlpreview.github.com/?https://github.com/inexorabletash/jslogo/blob/master/language.html) -
+[Language Reference](https://htmlpreview.github.com/?https://github.com/mnalis/jslogo-fms/blob/master/language.html) -
 this attempts to implement a subset of [UCBLogo](https://www.cs.berkeley.edu/~bh/v2ch14/manual.html)
 defined in in *Brian Harvey's Computer Science Logo Style*
 
