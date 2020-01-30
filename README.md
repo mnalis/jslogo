@@ -6,7 +6,8 @@ This forked version is modified so it more closely emulate
 which is [not yet able to run on GNU/Linux](https://sourceforge.net/p/fmslogo/feature-requests/1/)
 
 FMSLogo-alike forked version is hosted at https://mnalis.com/skola/jslogo-fms/ for playing with live.
-See [TODO](TODO-FMSLogo.txt) for more information.
+See [TODO](TODO-FMSLogo.txt) for more information. For now, you need to click on "Examples" and run 
+"FMSLogo compatibility initialisation" example to get FMSLogo compatibility.
 
 [Language Reference](https://htmlpreview.github.com/?https://github.com/mnalis/jslogo-fms/blob/master/language.html) -
 this attempts to implement a subset of [UCBLogo](https://www.cs.berkeley.edu/~bh/v2ch14/manual.html)
