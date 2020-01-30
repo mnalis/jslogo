@@ -5,7 +5,8 @@ This forked version is modified so it more closely emulate
 [FMSLogo](http://fmslogo.sourceforge.net/) sometimes used to tech kids programming, 
 which is [not yet able to run on GNU/Linux](https://sourceforge.net/p/fmslogo/feature-requests/1/)
 
-FMS-alike forked version is hosted at https://mnalis.com/skola/jslogo-fms/ for playing with live.
+FMSLogo-alike forked version is hosted at https://mnalis.com/skola/jslogo-fms/ for playing with live.
+See [TODO](TODO-FMSLogo.txt) for more information.
 
 [Language Reference](https://htmlpreview.github.com/?https://github.com/mnalis/jslogo-fms/blob/master/language.html) -
 this attempts to implement a subset of [UCBLogo](https://www.cs.berkeley.edu/~bh/v2ch14/manual.html)
@@ -36,6 +37,7 @@ Logo Links
 
 To Do
 -----
+* Document deviations from FMS Logo implementation (and try to implement most often used features and document in language.html!)
 * Document deviations from UCB Logo standard
 * Make these examples all work: [Logo 15-word challenge](http://www.mathcats.com/gallery/15wordcontest.html)
 * Tail-call optimization

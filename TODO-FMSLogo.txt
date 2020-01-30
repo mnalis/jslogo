@@ -1,0 +1,14 @@
+To Do
+-----
+- Document noticed deviations from FMS Logo:
+	- "arc" starts from different angle
+	- "circle" missing
+	- "setfc" (flood color for fill) missing
+	- "fill" uses "setpc" color instead of (missing) "setfc"
+	- "setpc" and "setsc" - color in list format has R/G/B values 0-99 (and FMSLogo has HTML-alike 0-255)
+	
+- Update docs in language.html for missing/modified commands
+
+- Implement and modify commands so they work like in FMS Logo
+	- current workaround is Logo initialization block which must be
+	  executed from "Examples"; reimplement in pure JavaScript

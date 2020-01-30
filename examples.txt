@@ -1,3 +1,39 @@
+; FMSLogo compatibility initialisation
+if primitivep "arc [
+make "redefp "true
+copydef ".arc "arc
+define "__new_arc [[r d] [rt 180 .arc :r :d lt 180]]
+copydef "arc "__new_arc
+define "circle [[r] [.arc 360 :r]]
+to __convert_rgb :arg
+    if listp :arg [
+        make "r item 1 :arg
+        make "g item 2 :arg
+        make "b item 3 :arg
+        make "arg (word "rgb char 40 :r ", :g ", :b char 41 )
+    ]
+    output :arg
+end
+copydef ".setpc "setpc
+define "__new_setpc [[boja] [.setpc __convert_rgb :boja]]
+copydef "setpc "__new_setpc
+copydef ".setsc "setsc
+define "__new_setsc [[boja] [.setsc __convert_rgb :boja]]
+copydef "setsc "__new_setsc
+to setfc :color make "__floodcolor :color end
+copydef ".fill "fill
+to __new_fill
+  make "__oldcolor pencolor
+  setpc :__floodcolor
+  .fill
+  setpc :__oldcolor
+end
+copydef "fill "__new_fill
+make "redefp "false
+;show text "arc
+]
+
+
 to star
   repeat 5 [ fd 100 rt 144 ]
 end
