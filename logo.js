@@ -3193,7 +3193,7 @@ function LogoInterpreter(turtle, stream, savehook)
   // Not Supported: continue
 
   def("wait", function(time) {
-    return promiseYieldTime(aexpr(time) / 60 * 1000);
+    return promiseYieldTime(Math.ceil(aexpr(time) / 60 * 1000));
   });
 
   def("bye", function() {
@@ -3241,22 +3241,22 @@ function LogoInterpreter(turtle, stream, savehook)
         this.execute(instructionlist, {returnResult: true})
           .then(function(result) {
             out = out.concat(result);
-            loop();
-          }).catch(reject);
+          })
+          .then(loop, reject);
       } else if (Type(member) === 'word' && /^",/.test(member)) {
         instructionlist = reparse(member.substring(2));
         this.execute(instructionlist, {returnResult: true})
           .then(function(result) {
             out.push('"' + (Type(result) === 'list' ? result[0] : result));
-            loop();
-          }).catch(reject);
+          })
+          .then(loop, reject);
       } else if (Type(member) === 'word' && /^:,/.test(member)) {
         instructionlist = reparse(member.substring(2));
         this.execute(instructionlist, {returnResult: true})
           .then(function(result) {
             out.push(':' + (Type(result) === 'list' ? result[0] : result));
-            loop();
-          }).catch(reject);
+          })
+          .then(loop, reject);
       } else {
         out.push(member);
         loop();
@@ -3373,7 +3373,7 @@ function LogoInterpreter(turtle, stream, savehook)
           }
           this.execute(block)
             .then(promiseYield)
-            .then(loop);
+            .then(loop, reject);
         }.bind(this), reject);
     }.bind(this));
   }, {noeval: true});
@@ -3414,7 +3414,7 @@ function LogoInterpreter(turtle, stream, savehook)
           }
           this.execute(block)
             .then(promiseYield)
-            .then(loop);
+            .then(loop, reject);
         }.bind(this), reject);
     }.bind(this));
   }, {noeval: true});
