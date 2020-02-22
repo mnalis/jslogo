@@ -6,6 +6,7 @@ To Do
 	- "setfc" (flood color for fill) missing
 	- "fill" uses "setpc" color instead of (missing) "setfc"
 	- "setpc" and "setsc" - color in list format has R/G/B values 0-99 (and FMSLogo has HTML-alike 0-255)
+	- "distance" missing
 	
 - Update docs in language.html for missing/modified commands
 

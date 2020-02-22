@@ -7,12 +7,12 @@ copydef "arc "__new_arc
 define "circle [[r] [.arc 360 :r]]
 to __convert_rgb :arg
     if listp :arg [
-        make "r item 1 :arg
-        make "g item 2 :arg
-        make "b item 3 :arg
-        make "arg (word "rgb char 40 :r ", :g ", :b char 41 )
+        make "__r item 1 :arg
+        make "__g item 2 :arg
+        make "__b item 3 :arg
+        make "__arg (word "rgb char 40 :__r ", :__g ", :__b char 41 )
     ]
-    output :arg
+    output :__arg
 end
 copydef ".setpc "setpc
 define "__new_setpc [[boja] [.setpc __convert_rgb :boja]]
@@ -23,13 +23,24 @@ copydef "setsc "__new_setsc
 to setfc :color make "__floodcolor :color end
 copydef ".fill "fill
 to __new_fill
-  make "__oldcolor pencolor
-  setpc :__floodcolor
-  .fill
-  setpc :__oldcolor
+    make "__oldcolor pencolor
+    setpc :__floodcolor
+    .fill
+    setpc :__oldcolor
 end
 copydef "fill "__new_fill
 make "redefp "false
+to distance :finish
+    make "__start pos
+    make "__x1 item 1 :__start
+    make "__y1 item 2 :__start
+    make "__x2 item 1 :finish
+    make "__y2 item 2 :finish
+    make "__dx :__x1 - :__x2
+    make "__dy :__y2 - :__y1
+    make "__distance sqrt :__dx ^ 2 + :__dy ^ 2
+    output :__distance
+end
 ;show text "arc
 ]
 
