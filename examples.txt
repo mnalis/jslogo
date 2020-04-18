@@ -2,7 +2,7 @@
 if primitivep "arc [
 make "redefp "true
 copydef ".arc "arc
-define "__new_arc [[r d] [rt 180 .arc :r :d lt 180]]
+define "__new_arc [[r d] [ if pendownp [rt 180 .arc :r :d lt 180]]]
 copydef "arc "__new_arc
 define "circle [[r] [.arc 360 :r]]
 to __convert_rgb :arg

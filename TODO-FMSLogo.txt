@@ -1,6 +1,7 @@
 To Do
 -----
 - Document noticed deviations from FMS Logo:
+	- "arc" should be no-op if "penup" is active
 	- "arc" starts from different angle
 	- "circle" missing
 	- "setfc" (flood color for fill) missing
