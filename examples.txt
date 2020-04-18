@@ -4,7 +4,7 @@ make "redefp "true
 copydef ".arc "arc
 define "__new_arc [[r d] [ if pendownp [rt 180 .arc :r :d lt 180]]]
 copydef "arc "__new_arc
-define "circle [[r] [.arc 360 :r]]
+define "circle [[r] [__new_arc 360 :r]]
 to __convert_rgb :arg
     if listp :arg [
         make "__r item 1 :arg
